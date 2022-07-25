@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/hud/Hud.gd" type="Script" id=1]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource( 1 )
+color = Color( 0.4, 0.701961, 0.188235, 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CheckButton" type="CheckButton" parent="Control"]
+margin_left = 508.0
+margin_top = 232.0
+margin_right = 584.0
+margin_bottom = 272.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+
+[node name="SpinBox" type="SpinBox" parent="Control"]
+margin_left = 235.0
+margin_top = 241.0
+margin_right = 309.0
+margin_bottom = 265.0
+
+[node name="Button" type="Button" parent="Control"]
+visible = false
+margin_right = 100.0
+margin_bottom = 20.0

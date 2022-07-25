@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/templates/player/PlayerTemplate.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.0, -1.0, -2.0, -3.0, -4.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0 ]
+}
+
+[node name="PlayerTemplate" type="Area2D"]
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+anims/RESET = SubResource( 2 )
+anims/idle = SubResource( 1 )
+
+[node name="CannonOne" type="Position2D" parent="."]
+position = Vector2( 600, 100 )
