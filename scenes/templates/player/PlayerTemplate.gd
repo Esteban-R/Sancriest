@@ -20,6 +20,7 @@ func _physics_process(delta):
 	movement(delta)
 	default_shot()
 	death()
+	new_mechanics()
 #---------------------------start of Functions-------------------------.!
 func movement(frame_time) -> void:
 	if Input.is_action_pressed("ui_right"):
@@ -67,7 +68,7 @@ func default_shot() -> void:
 			blue_shot.motion = Vector2(800,0)
 		
 		blue_shot.position = $CannonOne.global_position	
-		Utils.main_node.add_child(blue_shot)
+		Utils.main_node.call_deferred("add_child",blue_shot)
 		can_shot=false			
 		yield(get_tree().create_timer(0.3),"timeout")
 		can_shot=true
@@ -75,7 +76,6 @@ func default_shot() -> void:
 func _draw():
 	draw_rect(Rect2(Vector2(100,200),Vector2(change_tam,128)),color)
 	#draw_circle(Vector2(0,0),300, color)
-	#draw_line(Vector2(0,0),Vector2(100,1000),color,2.0)
 
 func new_mechanics():
 		#New Mechanics.!
@@ -90,3 +90,7 @@ func new_mechanics():
 func death():
 	if life <= 0:
 		print("Death")
+
+func _on_PlayerTemplate_area_entered(area):
+	if area.is_in_group("enemy"):
+		area.queue_free()

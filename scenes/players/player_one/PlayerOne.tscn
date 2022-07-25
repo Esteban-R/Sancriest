@@ -9,6 +9,7 @@ radius = 175.285
 
 [node name="PlayerOne" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+color = Color( 1, 0.133333, 0.133333, 1 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
