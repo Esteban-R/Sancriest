@@ -21,6 +21,9 @@ func _physics_process(delta):
 	default_shot()
 	death()
 	new_mechanics()
+	
+func _ready():
+	self.position = Vector2(Utils.screen_size.x/2,Utils.screen_size.y/2)
 #---------------------------start of Functions-------------------------.!
 func movement(frame_time) -> void:
 	if Input.is_action_pressed("ui_right"):
@@ -49,7 +52,7 @@ func movement(frame_time) -> void:
 
 	position+=motion*frame_time
 
-func default_shot() -> void:
+func default_shot():
 	if Input.is_action_just_pressed("ui_select") && can_shot:
 		
 		var blue_shot = scene_blue_laser.instance()

@@ -10,6 +10,6 @@ func _on_Visibility_screen_exited():
 
 func _on_LaserTemplate_area_entered(area):
 	if area.is_in_group("enemy"):
-		area.queue_free()
+		area.life-=1
 		self.queue_free()
 		

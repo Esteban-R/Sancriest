@@ -7,7 +7,7 @@ var screen_size setget ,get_screen_size
 var main_node setget ,get_main_scene
 var amount_shots setget ,get_amount_shots
 
-func get_screen_size():
+func get_screen_size() -> Vector2:
 	return get_tree().get_root().get_visible_rect().size
 
 func get_main_scene():
