@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprites/powers/palyer/Velocidad.png" type="Texture" id=1]
+[ext_resource path="res://scenes/templates/power/PowerTemplate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/powers/player/power_speed/PowerSpeed.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 108, 106 )
+
+[node name="PowerSpeed" instance=ExtResource( 2 )]
+scale = Vector2( 0.25, 0.25 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )
+
+[node name="Collision" parent="." index="1"]
+position = Vector2( 0, -2 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+position = Vector2( -2, 3.8147e-06 )
+scale = Vector2( 10.6, 10.8 )

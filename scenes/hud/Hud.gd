@@ -1,6 +1,7 @@
 extends CanvasLayer
 #---------------------------Start of Variables-------------------------.!
 onready var main_buttons = $Control/MainMenuButtons
+onready var game_level = $Control/GameLevel
 onready var score = $Control/GameInformation/ScoreLabel
 onready var countdown = $Control/GameLevel/NextLevelLabel
 onready var level = $Control/GameLevel/LevelLabel
@@ -14,9 +15,12 @@ func _on_ButtonPlay_pressed():
 	$Control/GameTitle.hide()
 	$Control/Decoration.hide()
 	
+	
 	show_text("GET READY.!")
 	yield(get_tree().create_timer(3),"timeout")
 	$Control/GameInformation.show()
+	game_level.show()
+	
 	hide_text()
 	emit_signal("new_game")
 	

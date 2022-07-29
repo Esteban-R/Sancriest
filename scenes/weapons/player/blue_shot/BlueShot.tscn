@@ -22,13 +22,14 @@ animations = [ {
 extents = Vector2( 185, 13.3333 )
 
 [node name="BlueShot" instance=ExtResource( 3 )]
+show_behind_parent = true
 scale = Vector2( 0.3, 0.3 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 5
+frame = 7
 playing = true
 
 [node name="Collision" parent="." index="1"]

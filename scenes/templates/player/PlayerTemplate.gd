@@ -96,4 +96,14 @@ func death():
 
 func _on_PlayerTemplate_area_entered(area):
 	if area.is_in_group("enemy"):
-		area.queue_free()
+		area.life=0
+	elif area.is_in_group("power"):
+		match area.type_of_power:
+			"speed":
+				speed=20
+				yield(get_tree().create_timer(10),"timeout")
+				speed=10
+			"shield":
+				pass
+	else:
+		print("Unexpected Collision")

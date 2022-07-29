@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.0, -1.0, -2.0, -3.0, -4.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0 ]
 }
 
-[node name="PlayerTemplate" type="Area2D"]
+[node name="PlayerTemplate" type="Area2D" groups=["player"]]
 scale = Vector2( 0.18, 0.18 )
 script = ExtResource( 1 )
 
